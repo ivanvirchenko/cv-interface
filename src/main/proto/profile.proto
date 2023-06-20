@@ -1,0 +1,34 @@
+syntax="proto3";
+
+package com.mycv.server;
+
+option java_multiple_files=true;
+option java_package="com.mycv.server.domain";
+option java_outer_classname="Profile";
+
+message ProfileDTO {
+  string name = 1;
+  string position = 2;
+  map<string, string> contacts = 3;
+  repeated string skills = 4;
+  repeated string languages = 5;
+  string summary = 6;
+  repeated JobDTO jobs = 7;
+  repeated InstitutionDTO institutions = 8;
+  bytes photo = 9;
+}
+
+message JobDTO {
+  string company = 1;
+  string start_time = 2;
+  string end_time = 3;
+  string position = 4;
+  string description = 5;
+}
+
+message InstitutionDTO {
+  string name = 1;
+  string start_time = 2;
+  string end_time = 3;
+  string degree = 4;
+}

@@ -1,0 +1,14 @@
+syntax="proto3";
+
+package com.mycv.server;
+
+option java_multiple_files=true;
+option java_package="com.mycv.server.service";
+option java_outer_classname="ProfileServiceImpl";
+
+import "profile.proto";
+import "google/protobuf/empty.proto";
+
+service ProfileService {
+  rpc GetProfile(google.protobuf.Empty) returns (ProfileDTO);
+}
